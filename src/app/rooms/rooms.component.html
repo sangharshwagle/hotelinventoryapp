@@ -1,20 +1,6 @@
 <div class="rooms-container">
   <div class="book-room-container" *ngIf="rooms.availableRooms > 0">
-    <app-available-rooms></app-available-rooms>
-    <table>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>CheckInAvailable</th>
-      </tr>
-      <tr [ngClass]="e ?'even':''" *ngFor="let room of rooms.roomsDetail; let i = index; let e = even">
-        <td>{{i + 1}}</td>
-        <td>{{room.name}}</td>
-        <td>{{room.price | currency}}</td>
-        <td>{{room.checkInAvailableDate | date}}</td>
-      </tr>
-    </table>
+    <app-list-available-rooms [rooms]="rooms"></app-list-available-rooms>
     <app-book-room></app-book-room>
   </div>
   <div class="no-rooms-container" *ngIf="rooms.availableRooms <= 0">

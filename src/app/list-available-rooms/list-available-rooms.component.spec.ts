@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AvailableRoomsComponent } from './available-rooms.component';
+import { ListAvailableRoomsComponent } from './list-available-rooms.component';
 
 describe('AvailableRoomsComponent', () => {
-  let component: AvailableRoomsComponent;
-  let fixture: ComponentFixture<AvailableRoomsComponent>;
+  let component: ListAvailableRoomsComponent;
+  let fixture: ComponentFixture<ListAvailableRoomsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AvailableRoomsComponent ]
+      declarations: [ ListAvailableRoomsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AvailableRoomsComponent);
+    fixture = TestBed.createComponent(ListAvailableRoomsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

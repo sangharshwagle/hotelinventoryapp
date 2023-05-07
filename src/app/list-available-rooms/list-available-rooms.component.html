@@ -1,0 +1,17 @@
+<div class="available-rooms-container">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>CheckInAvailable</th>
+    </tr>
+    <tr [ngClass]="e ?'even':''" *ngFor="let room of rooms.roomsDetail; let i = index; let e = even">
+      <td>{{i + 1}}</td>
+      <td>{{room.name}}</td>
+      <td>{{room.price | currency}}</td>
+      <td>{{room.checkInAvailableDate | date}}</td>
+    </tr>
+  </table>
+</div>
+
