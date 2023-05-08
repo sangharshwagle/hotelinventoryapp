@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Rooms} from '../model/rooms';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {RoomDetail, Rooms} from '../model/rooms';
 
 @Component({
   selector: 'app-list-available-rooms',
@@ -9,4 +9,12 @@ import {Rooms} from '../model/rooms';
 export class ListAvailableRoomsComponent {
   @Input()
   rooms: any;
+
+  @Output()
+  selectedRoom = new EventEmitter<RoomDetail> ();
+
+
+  onClick(roomDetail: RoomDetail) {
+    this.selectedRoom.emit(roomDetail);
+  }
 }

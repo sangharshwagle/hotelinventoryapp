@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-book-room',
@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
 })
 export class BookRoomComponent {
 
+  @Input()
+  selectedRoomName: string | undefined;
+
   onClick() {
-    console.log('book room got called');
+
   }
 }
