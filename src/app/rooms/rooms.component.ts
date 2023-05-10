@@ -6,12 +6,14 @@ import {RoomDetail, Rooms} from '../model/rooms';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.css']
 })
-export class RoomsComponent implements OnInit, OnChanges {
+export class RoomsComponent implements OnInit {
 
   roomsDetailList: RoomDetail[];
   rooms: Rooms;
   isRoomSelected: boolean = false;
   selectedRoomName: string | undefined;
+
+  name: string | undefined;
 
   constructor() {
     this.roomsDetailList = [
@@ -28,12 +30,11 @@ export class RoomsComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-
-  }
-  ngOnChanges(changes: SimpleChanges): void {
+    this.name = "Sang";
   }
   selectedRoom(roomDetail: RoomDetail) {
     this.isRoomSelected = true;
     this.selectedRoomName = roomDetail.name;
+    this.name = "Selected Room";
   }
 }
